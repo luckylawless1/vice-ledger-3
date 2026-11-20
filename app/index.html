@@ -3,23 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>VICE LEDGER 3 — GTA VI Trophy Guide, Completion Planner &amp; Session Routes</title>
+<link rel="icon" href="icon.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="masthead">
+  <div class="brand">
+    <img class="brand-mark" src="icon.svg" alt="" width="44" height="44">
+    <div>
+      <h1>VICE LEDGER <span class="v3">3</span></h1>
+      <p class="tagline">GTA VI · PlayStation 5 · 55 trophies · every step cited · now with a 100% Completion Planner and Tonight's Session routes · works offline</p>
+    </div>
+  </div>
+  <div class="mast-actions">
+    <span id="save-state" class="savestate">Saved in this browser</span>
+    <button id="btn-export" type="button">Export</button>
+    <button id="btn-import" type="button">Import</button>
+    <input id="file-import" type="file" accept="application/json" hidden>
+    <button id="btn-reset" type="button">Reset</button>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
-<script type="module" src="app.js"></script>
+
+<section class="dashboard" aria-label="Progress dashboard">
+  <div class="bigcount"><span id="earned-count">0</span><small> / 55 earned</small></div>
+  <div class="barwrap">
+    <div class="bar"><div id="bar-fill"></div></div>
+    <div id="bar-pct" class="bar-pct">0%</div>
+  </div>
+  <div id="grade-counts" class="grade-counts"></div>
+  <div id="forecast" class="forecast"></div>
+</section>
+
+<div id="kind-bars" class="kind-bars" aria-label="Completion by kind"></div>
+
+<nav class="stage-strip" id="stage-strip" aria-label="Roadmap stages"></nav>
+
+<nav class="tabs" id="tabs" aria-label="Views">
+  <button type="button" data-view="checklist" class="on">Checklist</button>
+  <button type="button" data-view="roadmap">Roadmap</button>
+  <button type="button" data-view="missables">Missables</button>
+  <button type="button" data-view="planner">Next Up</button>
+  <button type="button" data-view="completion">100% Planner</button>
+  <button type="button" data-view="session">Tonight's Session</button>
+  <button type="button" data-view="journey">Journey</button>
+  <button type="button" data-view="sources">Sources</button>
+  <button type="button" data-view="matrix">Source Matrix</button>
+  <button type="button" data-view="card">Platinum Card</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div id="audit-strip" class="audit" aria-label="Evidence audit"></div>
+    <div id="warn-banner" class="warn" hidden></div>
+    <div id="nextup-bar" class="nextup"></div>
+    <div class="toolbar">
+      <div class="chips" id="kind-chips" role="group" aria-label="Filter by kind"></div>
+      <div class="tools">
+        <select id="grade-filter" aria-label="Filter by grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+        <select id="sort-order" aria-label="Sort order">
+          <option value="official">Official order</option>
+          <option value="roadmap">Roadmap order</option>
+          <option value="route">Route: easiest first</option>
+        </select>
+        <input id="search" type="search" placeholder="Search trophies, guides, places…" aria-label="Search trophies">
+        <label class="chk"><input type="checkbox" id="hide-earned"> Hide earned</label>
+        <label class="chk"><input type="checkbox" id="spoilers"> Spoiler shield</label>
+      </div>
+    </div>
+    <div class="layout">
+      <div id="list" class="list" aria-label="Trophy checklist"></div>
+      <aside id="guide-pane" class="pane" aria-label="Trophy guide"></aside>
+      <aside id="source-rail" class="rail" aria-label="Sources for the open guide"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden></section>
+  <section id="view-missables" class="view" hidden></section>
+  <section id="view-planner" class="view" hidden></section>
+  <section id="view-completion" class="view" hidden></section>
+  <section id="view-session" class="view" hidden></section>
+  <section id="view-journey" class="view" hidden></section>
+  <section id="view-sources" class="view" hidden></section>
+  <section id="view-matrix" class="view" hidden></section>
+  <section id="view-card" class="view" hidden></section>
+</main>
+
+<footer class="colophon">
+  <p>VICE LEDGER 3 is an unofficial fan guide. Trophy names, descriptions and grades are as PlayStation publishes them; every guide is written for this entry and cites its sources by number. No Rockstar Games artwork is used. Progress never leaves this browser unless you export it.</p>
+</footer>
+
+<script type="module" src="js/main.js"></script>
 </body>
 </html>

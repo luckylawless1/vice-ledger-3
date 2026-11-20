@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-guide.jpg","path":"/","scroll":930,"view":"checklist with the Positive Mental Attitude guide open: missable and sources-disagree boxes, routed and failure-warned cited steps, your-count counter, source rail","viewport":{"height":800,"width":1280}},{"file":"2-planner.jpg","path":"/","view":"100% Completion Planner (new in v3): per-roadmap-stage hour budgets, total hours to platinum, hours done/left and projected finish at the player's weekly pace","viewport":{"height":800,"width":1280}},{"file":"3-session.jpg","path":"/","view":"Tonight's Session (new in v3): a 2-hour budget turned into an ordered, stage-aware trophy route with running totals and held-back trophies","viewport":{"height":800,"width":1280}},{"file":"4-card.jpg","path":"/","view":"Platinum Card: the shareable progress card rendered from the saved state, downloadable as PNG or SVG","viewport":{"height":800,"width":1280}}]
